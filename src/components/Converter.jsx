@@ -1,4 +1,4 @@
-import { TextField, Typography } from "@mui/material";
+import { Button, Grid, TextField, Typography } from "@mui/material";
 import { useFormik } from "formik";
 import { useSelector } from "react-redux";
 import getSchema from "../utils/validation";
@@ -50,21 +50,39 @@ const Converter = () => {
   return (
     <div className="containerCenter">
       <form onSubmit={formik.handleSubmit} role="form">
-        <TextField
-          fullWidth
-          label="15 USD in RUB"
-          placeholder="15 USD in RUB"
-          id="request"
-          error={
-            (formik.errors.request && formik.touched.request) || statusError
-              ? true
-              : false
-          } //при наличии ошибок поле будет красным
-          helperText={formik.errors.request ?? textError} //вывод текстов ошибок под полем
-          onChange={formik.handleChange("request")}
-          value={formik.values.request}
-          onBlur={formik.handleBlur("request")}
-        />
+        <Grid container spacing={1} alignItems="center">
+          <Grid item xs={7}>
+            <TextField
+              fullWidth
+              label="15 USD in RUB"
+              placeholder="15 USD in RUB"
+              id="request"
+              error={
+                (formik.errors.request && formik.touched.request) || statusError
+                  ? true
+                  : false
+              } //при наличии ошибок поле будет красным
+              helperText={formik.errors.request ?? textError} //вывод текстов ошибок под полем
+              onChange={formik.handleChange("request")}
+              value={formik.values.request}
+              onBlur={formik.handleBlur("request")}
+            />
+          </Grid>
+          <Grid item xs={1}>
+            <Button
+              variant="outlined"
+              onClick={formik.handleSubmit}
+              size="large"
+              disabled={
+                (formik.errors.request && formik.touched.request) || statusError
+                  ? true
+                  : false
+              }
+            >
+              Конвертировать
+            </Button>
+          </Grid>
+        </Grid>
       </form>
       <Typography mt={2}>Результат: {Math.trunc(result)}</Typography>
     </div>
