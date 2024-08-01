@@ -2,7 +2,7 @@
 
 ## Для работы приложения 
 
-необходимо получить бесплатный ключ API на сайте [**https://www.exchangerate-api.com/**] (https://www.exchangerate-api.com/)
+необходимо получить бесплатный ключ API на сайте [**https://www.exchangerate-api.com**](https://www.exchangerate-api.com)
 И добавить файл .env в корень проекта с содержимым 
 ```javascript
 "REACT_APP_ID="Ваш ID"
