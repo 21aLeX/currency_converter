@@ -1,5 +1,8 @@
 # Конверер валют
 
+ Demo [**Converter currency**](https://currency-converter-nu-three.vercel.app/)
+
+
 ## Для работы приложения 
 
 необходимо получить бесплатный ключ API на сайте [**https://www.exchangerate-api.com**](https://www.exchangerate-api.com)
